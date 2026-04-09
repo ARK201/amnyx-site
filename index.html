@@ -3,11 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AmnyX Messenger</title>
 
+<title>AmnyX Messenger | Secure Private Messaging App</title>
+
+<!-- SEO -->
+<meta name="description" content="AmnyX Messenger is a secure, private messaging app with end-to-end encryption, anonymity, and fast performance.">
+<meta name="keywords" content="secure messaging, private chat app, encrypted messenger, anonymous messaging, AmnyX">
+<meta name="author" content="AmnyX">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="AmnyX Messenger">
+<meta property="og:description" content="Secure, private messaging built for speed and anonymity.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://amnyx.com">
+<meta property="og:image" content="https://amnyx.com/logo black bg.png">
+
+<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- ✅ Font Awesome -->
+<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
@@ -113,12 +128,20 @@ h1 {
     background: radial-gradient(circle at 30% 30%, #feda75, #d62976, #962fbf);
     color: white;
 }
+.mastodon { 
+    background: #6364FF; 
+    color: white; 
+}
 .email { background: #4DA6FF; color: white; }
 .desktop { background: transparent; border: 2px solid #4DA6FF; color: #4DA6FF; }
 
 .social-icons a:hover {
     transform: translateY(-4px) scale(1.1);
     box-shadow: 0 8px 20px rgba(77,166,255,0.6);
+}
+
+.mastodon:hover {
+    box-shadow: 0 8px 20px rgba(99,100,255,0.7);
 }
 
 /* Features */
@@ -168,7 +191,7 @@ h1 {
         built for privacy and speed.
     </p>
 
-    <!-- ✅ Colored Icons -->
+    <!-- Social Icons -->
     <div class="social-icons reveal">
 
         <a href="https://play.google.com/store/apps/details?id=com.amnyx.messenger" target="_blank" class="google">
@@ -187,6 +210,10 @@ h1 {
             <i class="fab fa-instagram"></i>
         </a>
 
+        <a href="https://mastodon.social/AmnyX" target="_blank" class="mastodon">
+            <i class="fab fa-mastodon"></i>
+        </a>
+
         <a href="mailto:amnyxmessenger@gmail.com" class="email">
             <i class="fas fa-envelope"></i>
         </a>
@@ -196,6 +223,12 @@ h1 {
         </a>
 
     </div>
+
+    <!-- SEO Boost Section -->
+    <h2 class="reveal" style="margin-top:20px;">Private & Secure Messaging App</h2>
+    <p class="description reveal">
+        AmnyX is a next-generation encrypted messenger designed for privacy-first communication.
+    </p>
 
     <!-- Features -->
     <ul class="features reveal">
@@ -208,7 +241,6 @@ h1 {
 
 </div>
 
-<!-- Scroll Animation Script -->
 <script>
 const reveals = document.querySelectorAll(".reveal");
 
@@ -228,4 +260,4 @@ window.addEventListener("load", revealOnScroll);
 </script>
 
 </body>
-</html>
+</html> 
