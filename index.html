@@ -9,7 +9,6 @@
 <!-- SEO -->
 <meta name="description" content="AmnyX Messenger is a secure, private messaging app with end-to-end encryption, anonymity, and fast performance.">
 <meta name="keywords" content="secure messaging, private chat app, encrypted messenger, anonymous messaging, AmnyX">
-<meta name="author" content="AmnyX">
 <meta name="robots" content="index, follow">
 
 <!-- Open Graph -->
@@ -17,12 +16,9 @@
 <meta property="og:description" content="Secure, private messaging built for speed and anonymity.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://amnyx.com">
-<meta property="og:image" content="https://amnyx.com/logo black bg.png">
+<meta property="og:image" content="https://amnyx.com/logo.png">
 
-<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
@@ -44,15 +40,15 @@ body {
     position: relative;
 }
 
-/* Background */
+/* Background (LESS blur now) */
 body::before {
     content: "";
     position: fixed;
     inset: 0;
     background: url("logo black bg.png") no-repeat center center;
     background-size: cover;
-    filter: blur(5px);
-    transform: scale(1.1);
+    filter: blur(2px); /* reduced blur */
+    transform: scale(1.05);
     z-index: -2;
 }
 
@@ -70,15 +66,38 @@ body::after {
     width: 100%;
     padding: 30px 25px;
     border-radius: 20px;
-
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
     border: 1px solid rgba(255,255,255,0.1);
     box-shadow: 0 8px 40px rgba(0,0,0,0.4);
-
     text-align: center;
+
+    animation: fadeIn 1s ease forwards;
+}
+
+/* Text animations */
+h1, .tagline, .description {
+    animation: fadeUp 1s ease forwards;
+}
+
+.tagline { animation-delay: 0.2s; }
+h1 { animation-delay: 0.4s; }
+.description { animation-delay: 0.6s; }
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* Text */
@@ -117,32 +136,44 @@ h1 {
     justify-content: center;
     text-decoration: none;
     font-size: 20px;
-    transition: 0.3s;
+
+    transition: all 0.3s ease;
+    animation: popIn 0.6s ease forwards;
+}
+
+.social-icons a:nth-child(1) { animation-delay: 0.2s; }
+.social-icons a:nth-child(2) { animation-delay: 0.3s; }
+.social-icons a:nth-child(3) { animation-delay: 0.4s; }
+.social-icons a:nth-child(4) { animation-delay: 0.5s; }
+.social-icons a:nth-child(5) { animation-delay: 0.6s; }
+.social-icons a:nth-child(6) { animation-delay: 0.7s; }
+.social-icons a:nth-child(7) { animation-delay: 0.8s; }
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Hover animation */
+.social-icons a:hover {
+    transform: translateY(-6px) scale(1.15);
+    box-shadow: 0 10px 25px rgba(77,166,255,0.6);
 }
 
 /* Brand Colors */
-.google { background: #34A853; color: white; }
-.x { background: #000000; color: white; }
-.facebook { background: #1877F2; color: white; }
-.instagram { 
-    background: radial-gradient(circle at 30% 30%, #feda75, #d62976, #962fbf);
-    color: white;
-}
-.mastodon { 
-    background: #6364FF; 
-    color: white; 
-}
-.email { background: #4DA6FF; color: white; }
+.google { background: #34A853; }
+.x { background: #000000; }
+.facebook { background: #1877F2; }
+.instagram { background: radial-gradient(circle at 30% 30%, #feda75, #d62976, #962fbf); }
+.mastodon { background: #6364FF; }
+.email { background: #4DA6FF; }
 .desktop { background: transparent; border: 2px solid #4DA6FF; color: #4DA6FF; }
-
-.social-icons a:hover {
-    transform: translateY(-4px) scale(1.1);
-    box-shadow: 0 8px 20px rgba(77,166,255,0.6);
-}
-
-.mastodon:hover {
-    box-shadow: 0 8px 20px rgba(99,100,255,0.7);
-}
 
 /* Features */
 .features {
@@ -154,26 +185,11 @@ h1 {
 
 .features li {
     margin-bottom: 15px;
-    font-size: 16px;
-    line-height: 1.5;
 }
 
-/* Scroll Animation */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
+/* Responsive */
 @media (max-width: 600px) {
-    h1 {
-        font-size: 38px;
-    }
+    h1 { font-size: 38px; }
 }
 </style>
 </head>
@@ -182,82 +198,57 @@ h1 {
 
 <div class="container">
 
-    <div class="tagline reveal">SECURE - PRIVATE - YOURS</div>
+<div class="tagline">SECURE - PRIVATE - YOURS</div>
 
-    <h1 class="reveal">AmnyX<br>Messenger</h1>
+<h1>AmnyX<br>Messenger</h1>
 
-    <p class="description reveal">
-        A next-generation secure messaging app<br>
-        built for privacy and speed.
-    </p>
+<p class="description">
+A next-generation secure messaging app<br>
+built for privacy and speed.
+</p>
 
-    <!-- Social Icons -->
-    <div class="social-icons reveal">
+<div class="social-icons">
 
-        <a href="https://play.google.com/store/apps/details?id=com.amnyx.messenger" target="_blank" class="google">
-            <i class="fab fa-google-play"></i>
-        </a>
+<a href="https://play.google.com/store/apps/details?id=com.amnyx.messenger" target="_blank" class="google">
+<i class="fab fa-google-play"></i>
+</a>
 
-        <a href="https://x.com/amnyx_messenger" target="_blank" class="x">
-            <i class="fab fa-x-twitter"></i>
-        </a>
+<a href="https://x.com/amnyx_messenger" target="_blank" class="x">
+<i class="fab fa-x-twitter"></i>
+</a>
 
-        <a href="https://www.facebook.com/share/1M6FBL6Krp/" target="_blank" class="facebook">
-            <i class="fab fa-facebook-f"></i>
-        </a>
+<a href="https://www.facebook.com/share/1M6FBL6Krp/" target="_blank" class="facebook">
+<i class="fab fa-facebook-f"></i>
+</a>
 
-        <a href="https://www.instagram.com/amnyx.messenger" target="_blank" class="instagram">
-            <i class="fab fa-instagram"></i>
-        </a>
+<a href="https://www.instagram.com/amnyx.messenger" target="_blank" class="instagram">
+<i class="fab fa-instagram"></i>
+</a>
 
-        <a href="https://mastodon.social/AmnyX" target="_blank" class="mastodon">
-            <i class="fab fa-mastodon"></i>
-        </a>
+<!-- Mastodon fixed -->
+<a href="https://mastodon.social/@AmnyX" target="_blank" class="mastodon">
+<i class="fab fa-mastodon"></i>
+</a>
 
-        <a href="mailto:amnyxmessenger@gmail.com" class="email">
-            <i class="fas fa-envelope"></i>
-        </a>
+<a href="mailto:amnyxmessenger@gmail.com" class="email">
+<i class="fas fa-envelope"></i>
+</a>
 
-        <a href="https://tinyurl.com/amnyx-pc" target="_blank" class="desktop">
-            <i class="fas fa-desktop"></i>
-        </a>
-
-    </div>
-
-    <!-- SEO Boost Section -->
-    <h2 class="reveal" style="margin-top:20px;">Private & Secure Messaging App</h2>
-    <p class="description reveal">
-        AmnyX is a next-generation encrypted messenger designed for privacy-first communication.
-    </p>
-
-    <!-- Features -->
-    <ul class="features reveal">
-        <li>✅ Ultimate Data Protection: Industry-leading encryption for every message, call, and file.</li>
-        <li>✅ Total Anonymity: No phone numbers, no tracking, and no data harvesting—ever.</li>
-        <li>✅ Effortless Security: A premium, user-friendly interface that makes privacy feel natural.</li>
-        <li>✅ Complete Identity Control: Use custom display names decoupled from your real-world identity.</li>
-        <li>✅ Metadata Privacy: Mask your digital footprint with integrated Tor Network support.</li>
-    </ul>
+<a href="https://tinyurl.com/amnyx-pc" target="_blank" class="desktop">
+<i class="fas fa-desktop"></i>
+</a>
 
 </div>
 
-<script>
-const reveals = document.querySelectorAll(".reveal");
+<ul class="features">
+<li>✅ End-to-end encrypted messaging</li>
+<li>✅ No phone number required</li>
+<li>✅ Anonymous and privacy-first</li>
+<li>✅ Fast and lightweight</li>
+<li>✅ Tor-ready architecture</li>
+</ul>
 
-function revealOnScroll() {
-    reveals.forEach(el => {
-        const windowHeight = window.innerHeight;
-        const elementTop = el.getBoundingClientRect().top;
-
-        if (elementTop < windowHeight - 50) {
-            el.classList.add("active");
-        }
-    });
-}
-
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
-</script>
+</div>
 
 </body>
-</html> 
+</html>
