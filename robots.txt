@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://amnyx.com/sitemap.xml
