@@ -6,17 +6,8 @@
 
 <title>AmnyX Messenger | Secure Private Messaging App</title>
 
-<!-- SEO -->
 <meta name="description" content="AmnyX Messenger is a secure, private messaging app with end-to-end encryption, anonymity, and fast performance.">
-<meta name="keywords" content="secure messaging, private chat app, encrypted messenger, anonymous messaging, AmnyX">
 <meta name="robots" content="index, follow">
-
-<!-- Open Graph -->
-<meta property="og:title" content="AmnyX Messenger">
-<meta property="og:description" content="Secure, private messaging built for speed and anonymity.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://amnyx.com">
-<meta property="og:image" content="https://amnyx.com/logo.png">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -36,18 +27,17 @@ body {
     align-items: center;
     min-height: 100vh;
     padding: 20px;
-    overflow-x: hidden;
     position: relative;
 }
 
-/* Background (LESS blur now) */
+/* Background */
 body::before {
     content: "";
     position: fixed;
     inset: 0;
     background: url("logo black bg.png") no-repeat center center;
     background-size: cover;
-    filter: blur(2px); /* reduced blur */
+    filter: blur(2px);
     transform: scale(1.05);
     z-index: -2;
 }
@@ -60,44 +50,16 @@ body::after {
     z-index: -1;
 }
 
-/* Glass Card */
+/* Container */
 .container {
     max-width: 520px;
     width: 100%;
     padding: 30px 25px;
     border-radius: 20px;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255,255,255,0.05);
     backdrop-filter: blur(18px);
     border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 8px 40px rgba(0,0,0,0.4);
     text-align: center;
-
-    animation: fadeIn 1s ease forwards;
-}
-
-/* Text animations */
-h1, .tagline, .description {
-    animation: fadeUp 1s ease forwards;
-}
-
-.tagline { animation-delay: 0.2s; }
-h1 { animation-delay: 0.4s; }
-.description { animation-delay: 0.6s; }
-
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
 }
 
 /* Text */
@@ -109,8 +71,8 @@ h1 { animation-delay: 0.4s; }
 }
 
 h1 {
-    font-size: 50px;
-    margin-bottom: 15px;
+    font-size: 46px;
+    margin-bottom: 10px;
 }
 
 .description {
@@ -122,72 +84,61 @@ h1 {
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 12px;
+    gap: 15px;
     flex-wrap: wrap;
     margin-bottom: 30px;
 }
 
 .social-icons a {
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 22px;
     text-decoration: none;
-    font-size: 20px;
-
-    transition: all 0.3s ease;
-    animation: popIn 0.6s ease forwards;
+    color: white;
+    transition: 0.3s;
 }
 
-.social-icons a:nth-child(1) { animation-delay: 0.2s; }
-.social-icons a:nth-child(2) { animation-delay: 0.3s; }
-.social-icons a:nth-child(3) { animation-delay: 0.4s; }
-.social-icons a:nth-child(4) { animation-delay: 0.5s; }
-.social-icons a:nth-child(5) { animation-delay: 0.6s; }
-.social-icons a:nth-child(6) { animation-delay: 0.7s; }
-.social-icons a:nth-child(7) { animation-delay: 0.8s; }
-
-@keyframes popIn {
-    from {
-        opacity: 0;
-        transform: scale(0.7);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* Hover animation */
-.social-icons a:hover {
-    transform: translateY(-6px) scale(1.15);
-    box-shadow: 0 10px 25px rgba(77,166,255,0.6);
-}
-
-/* Brand Colors */
+/* Clean solid icons (like your screenshot) */
 .google { background: #34A853; }
-.x { background: #000000; }
+.x { background: #000; }
 .facebook { background: #1877F2; }
-.instagram { background: radial-gradient(circle at 30% 30%, #feda75, #d62976, #962fbf); }
+.instagram { background: linear-gradient(45deg,#feda75,#d62976,#962fbf); }
 .mastodon { background: #6364FF; }
-.email { background: #4DA6FF; }
-.desktop { background: transparent; border: 2px solid #4DA6FF; color: #4DA6FF; }
+.email { background: #5AA9FF; }
+.desktop {
+    background: transparent;
+    border: 2px solid #4DA6FF;
+    color: #4DA6FF;
+}
 
-/* Features */
+/* Hover */
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+
+/* Section */
+h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
 .features {
     list-style: none;
-    margin-top: 25px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 20px;
+    text-align: left;
 }
 
 .features li {
     margin-bottom: 15px;
+    line-height: 1.5;
+    color: #ddd;
 }
 
-/* Responsive */
+/* Mobile */
 @media (max-width: 600px) {
     h1 { font-size: 38px; }
 }
@@ -225,7 +176,6 @@ built for privacy and speed.
 <i class="fab fa-instagram"></i>
 </a>
 
-<!-- Mastodon fixed -->
 <a href="https://mastodon.social/@AmnyX" target="_blank" class="mastodon">
 <i class="fab fa-mastodon"></i>
 </a>
@@ -240,12 +190,18 @@ built for privacy and speed.
 
 </div>
 
+<h2>Private & Secure Messaging App</h2>
+
+<p class="description">
+AmnyX is a next-generation encrypted messenger designed for privacy-first communication.
+</p>
+
 <ul class="features">
-<li>✅ End-to-end encrypted messaging</li>
-<li>✅ No phone number required</li>
-<li>✅ Anonymous and privacy-first</li>
-<li>✅ Fast and lightweight</li>
-<li>✅ Tor-ready architecture</li>
+<li>✅ Ultimate Data Protection: Industry-leading encryption for every message, call, and file.</li>
+<li>✅ Total Anonymity: No phone numbers, no tracking, and no data harvesting—ever.</li>
+<li>✅ Effortless Security: A premium, user-friendly interface that makes privacy feel natural.</li>
+<li>✅ Complete Identity Control: Use custom display names decoupled from your real-world identity.</li>
+<li>✅ Metadata Privacy: Mask your digital footprint with integrated Tor Network support.</li>
 </ul>
 
 </div>
